@@ -1,8 +1,3 @@
-$ mkdir apache
-$ cd apache
-~/apache$ echo "<h1>Prueba de funcionamiento contenedor docker</h1>">index.html
-En ese directorio vamos a crear un fichero Dockerfile, con el siguiente contenido:
-
 FROM debian
 MAINTAINER José Domingo Muñoz "josedom24@gmail.com"
 
