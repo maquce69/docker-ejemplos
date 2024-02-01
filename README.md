@@ -17,7 +17,7 @@ En Play with Docker vamos a utilizar este comando:
 - curl "IP docker"
 
 #EJEMPLOS DE DOCKERFILE
-'''
+```
 FROM debian
 MAINTAINER Miguel Quiros
 
@@ -31,4 +31,4 @@ EXPOSE 80
 ADD ["index.html","/var/www/html/"]
 
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-'''
+```
