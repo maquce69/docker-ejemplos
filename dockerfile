@@ -1,4 +1,5 @@
  FROM nginx:latest
+MAINTAINER Miguel Quiros
 
  COPY index.html /usr/share/nginx/html
  COPY linux.png /usr/share/nginx/html
