@@ -51,22 +51,25 @@
     <div id="content">
         <img src="pio.png" alt="Imagen" style="display: block; margin: 0 auto;">
         <div id="digital-clock"></div>
-        <script>
-            function updateTime() {
-                var now = new Date();
-                var hours = now.getHours();
-                var minutes = now.getMinutes();
-                var seconds = now.getSeconds();
+        <h2>Reloj Virtual</h2>
+        <p id="reloj"></p>
 
-                if (hours < 10) { hours = "0" + hours; }
-                if (minutes < 10) { minutes = "0" + minutes; }
-                if (seconds < 10) { seconds = "0" + seconds; }
+      <script>
+        function actualizarHora() {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
 
-                document.getElementById('digital-clock').innerHTML = hours + ":" + minutes + ":" + seconds;
-            }
+            if (horas < 10) { horas = "0" + horas; }
+            if (minutos < 10) { minutos = "0" + minutos; }
+            if (segundos < 10) { segundos = "0" + segundos; }
 
-            setInterval(updateTime, 1000);
-        </script>
+            document.getElementById('reloj').innerHTML = horas + ":" + minutos + ":" + segundos;
+        }
+
+        setInterval(actualizarHora, 1000);
+    </script>
     </div>
     <div id="footer">
         Realizado por Miguel Quiros
