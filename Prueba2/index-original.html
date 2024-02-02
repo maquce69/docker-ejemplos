@@ -1,45 +1,48 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <style>
-
+<head>
+    <title>Prueba de web</title>
+    <style>
         body {
-        	background-image: linear-gradient(-74deg, transparent 90%, rgba(255, 255, 255, 0.23) 20%),
-                              linear-gradient(-74deg, transparent 83%, rgba(255, 255, 255, 0.18) 15%),
-                              linear-gradient(-74deg, transparent 76%, rgba(255, 255, 255, 0.1) 15%),
-                              linear-gradient(to top, #127ab1, #1799e0, #1796db);
-    		background-size: cover;
-    		margin-bottom: 0px!important;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
         }
-
-        div{
-            font-family: 'Geomanist', sans-serif;
-  			font-weight: normal;
-  			color: white;
-            width: 50%;
-            margin: 0 auto;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-
+        #header {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
         }
-        </style>
-    </head>
-
-    <body>
-
-       <img src=https://www.docker.com/sites/all/themes/docker/assets/images/brand-full.svg width=20%></img>
-
-       <div class="inner">
-            <center><h1>Linux Tweet App!</h1></center>
-
-            <center><img src="./linux.png"></img><P>
-
-			You've successfully deployed the Linux tweet app! Why not let the world know?
-
-		  	<p>
-
-			 <a href="https://twitter.com/intent/tweet?button_hashtag=#Docker" class="twitter-hashtag-button" data-size="large" data-text="I'm learning how to deploy #Docker containers." data-url="http://www.docker.com" data-lang="en" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-    </body>
-
+        #header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        #content {
+            background: white;
+            padding: 20px;
+        }
+        #footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Práctica</h1>
+    </div>
+    <div id="content">
+        <img src="pio.png" alt="Imagen" style="display: block; margin: 0 auto;">
+    </div>
+    <div id="footer">
+        Realizado por Miguel Quirós
+    </div>
+</body>
 </html>
