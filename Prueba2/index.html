@@ -22,6 +22,7 @@
         #content {
             background: white;
             padding: 20px;
+            text-align: center;
         }
         #footer {
             background: black;
@@ -36,6 +37,10 @@
             width: 32px;
             height: 32px;
         }
+        #digital-clock {
+            font-size: 2em;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -44,31 +49,22 @@
     </div>
     <div id="content">
         <img src="pio.png" alt="Imagen" style="display: block; margin: 0 auto;">
-        <div id="3d-clock" style="width: 200px; height: 200px;"></div>
-        <script src="https://threejs.org/build/three.js"></script>
+        <div id="digital-clock"></div>
         <script>
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            var renderer = new THREE.WebGLRenderer();
+            function updateTime() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
 
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.getElementById('3d-clock').appendChild(renderer.domElement);
+                if (hours < 10) { hours = "0" + hours; }
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
 
-            var geometry = new THREE.BoxGeometry(1, 1, 1);
-            var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-            var cube = new THREE.Mesh(geometry, material);
-            scene.add(cube);
-
-            camera.position.z = 5;
-
-            function animate() {
-                requestAnimationFrame(animate);
-                cube.rotation.x += 0.01;
-                cube.rotation.y += 0.01;
-                renderer.render(scene, camera);
+                document.getElementById('digital-clock').innerHTML = hours + ":" + minutes + ":" + seconds;
             }
 
-            animate();
+            setInterval(updateTime, 1000);
         </script>
     </div>
     <div id="footer">
