@@ -40,25 +40,34 @@
     </div>
     <div id="content">
         <img src="pio.png" alt="Imagen" style="display: block; margin: 0 auto;">
-    <h2>Reloj Virtual</h2>
-    <p id="reloj"></p>
+<div id="3d-clock"></div>
 
-    <script>
-        function actualizarHora() {
-            var fecha = new Date();
-            var horas = fecha.getHours();
-            var minutos = fecha.getMinutes();
-            var segundos = fecha.getSeconds();
+<script src="https://threejs.org/build/three.js"></script>
+<script>
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var renderer = new THREE.WebGLRenderer();
 
-            if (horas < 10) { horas = "0" + horas; }
-            if (minutos < 10) { minutos = "0" + minutos; }
-            if (segundos < 10) { segundos = "0" + segundos; }
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('3d-clock').appendChild(renderer.domElement);
 
-            document.getElementById('reloj').innerHTML = horas + ":" + minutos + ":" + segundos;
-        }
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    var cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
 
-        setInterval(actualizarHora, 1000);
-    </script>
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+
+    animate();
+</script>
+
     </div>
     <div id="footer">
         Realizado por Miguel Quirós
