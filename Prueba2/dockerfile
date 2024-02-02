@@ -3,6 +3,9 @@ MAINTAINER Miguel Quiros
 
 COPY index.html /usr/share/nginx/html
 COPY pio.png /usr/share/nginx/html
+COPY facebook-icon.png /usr/share/nginx/html
+COPY twitter-icon.png /usr/share/nginx/html
+COPY linkedin-icon.png /usr/share/nginx/html
 
 EXPOSE 80 443     
 
