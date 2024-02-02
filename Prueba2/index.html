@@ -40,6 +40,25 @@
     </div>
     <div id="content">
         <img src="pio.png" alt="Imagen" style="display: block; margin: 0 auto;">
+    <h2>Reloj Virtual</h2>
+    <p id="reloj"></p>
+
+    <script>
+        function actualizarHora() {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
+
+            if (horas < 10) { horas = "0" + horas; }
+            if (minutos < 10) { minutos = "0" + minutos; }
+            if (segundos < 10) { segundos = "0" + segundos; }
+
+            document.getElementById('reloj').innerHTML = horas + ":" + minutos + ":" + segundos;
+        }
+
+        setInterval(actualizarHora, 1000);
+    </script>
     </div>
     <div id="footer">
         Realizado por Miguel Quirós
